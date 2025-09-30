@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# Trubridge Healthcare - Blood Pressure Screening Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive React-based dashboard analyzing blood pressure screening patterns from the 2023 National Health Interview Survey (NHIS) data. This project provides insights into healthcare equity, insurance status impacts, and demographic factors affecting preventive care access.
 
-## Available Scripts
+## 🏥 Project Overview
 
-In the project directory, you can run:
+This dashboard visualizes key findings from a comprehensive analysis of blood pressure screening data, highlighting critical disparities in healthcare access and providing evidence-based policy recommendations.
 
-### `npm start`
+### Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Interactive Data Visualizations**: Bar charts, pie charts, and line charts using Recharts
+- **Multi-Section Analysis**: Overview, Insurance Factors, Demographics, Regional Patterns, and Prevalence
+- **Policy Recommendations**: Evidence-based suggestions for improving healthcare equity
+- **Responsive Design**: Modern UI with Tailwind CSS styling
+- **Real-time Data**: Based on 2023 NHIS dataset with 11,018 adult participants
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📊 Data Insights
 
-### `npm test`
+### Critical Findings
+- **Insurance Gap**: Uninsured adults are 25% less likely to receive blood pressure screening (62.1% vs 87.3%)
+- **Statistical Significance**: Insurance status strongly predicts screening access (χ² = 245.31, p < 0.001)
+- **Age Disparities**: Younger adults (18-30) have lowest screening rates at 75.2%
+- **Regional Variations**: South leads with 86.2% screening rates, West lowest at 82.7%
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Policy Recommendations
+1. **Expand Medicaid and CHIP coverage** to reach more uninsured adults
+2. **Target interventions** for younger uninsured populations (18-30 age group)
+3. **Enhance outreach** in lower-screening regions, particularly the West
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v16 or higher)
+- npm (comes with Node.js)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository** (if applicable) or navigate to the project directory:
+   ```bash
+   cd Trubridge_Healthcare/trubridge_dashboard
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the development server**:
+   ```bash
+   # For Node.js v17+ (recommended)
+   set NODE_OPTIONS=--openssl-legacy-provider && npm start
+   
+   # For older Node.js versions
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Open your browser** and navigate to `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Troubleshooting
 
-## Learn More
+#### Node.js OpenSSL Error
+If you encounter the error `error:0308010C:digital envelope routines::unsupported`, use:
+```bash
+set NODE_OPTIONS=--openssl-legacy-provider && npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### React Scripts Not Found
+If you get `'react-scripts' is not recognized`, try:
+```bash
+npm install react-scripts@4.0.3 --save
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📁 Project Structure
 
-### Code Splitting
+```
+trubridge_dashboard/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── App.js          # Main dashboard component
+│   ├── App.css         # Styling
+│   └── index.js        # Entry point
+├── package.json        # Dependencies and scripts
+└── README.md          # This file
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Available Scripts
 
-### Analyzing the Bundle Size
+- **`npm start`** - Runs the app in development mode
+- **`npm run build`** - Builds the app for production
+- **`npm test`** - Launches the test runner
+- **`npm run eject`** - Ejects from Create React App (one-way operation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📈 Technologies Used
 
-### Making a Progressive Web App
+- **React 19.1.1** - Frontend framework
+- **Recharts 2.15.4** - Data visualization library
+- **React Scripts 4.0.3** - Build tools and development server
+- **Tailwind CSS** - Utility-first CSS framework (via CDN)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔬 Data Source
 
-### Advanced Configuration
+- **Dataset**: 2023 National Health Interview Survey (NHIS)
+- **Sample Size**: 11,018 adults aged 18+
+- **Source**: IPUMS (Integrated Public Use Microdata Series)
+- **Analysis**: Statistical significance tested using chi-square tests and XGBoost modeling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 👨‍💻 Author
 
-### Deployment
+**Daniel Chukwudera** - Fisk University
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is for educational and research purposes. Data analysis conducted as part of academic research on healthcare equity and preventive care access.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+
+This is an academic research project. For questions or collaboration opportunities, please contact the author.
+
+---
+
+*Built with React and Recharts for data-driven healthcare insights.*
